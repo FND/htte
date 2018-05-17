@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>编码器 | Htte | HTTP 接口自动化测试框架</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="meta.keywords">
+  <meta name="description" content="Htte 是一款 HTTP 接口自动化测试框架。">
+  <meta name="robots" content="index, follow">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://sigoden.github.io/0.3/docs/serializer.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://sigoden.github.io/en/0.3/docs/serializer.html">
+    
+      <link rel="alternative" hreflang="zh-Hans" href="https://sigoden.github.io/0.3/docs/serializer.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/htte/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/htte/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/htte/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/htte/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/htte/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/htte/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/htte/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/htte/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/htte/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/htte.css -->
+  <link rel="stylesheet" href="/htte/css/htte.css">
+  <!-- endbuild -->
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto Mono|Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <!-- RSS 
+  <link rel="alternate" href="/htte/atom.xml" title="Htte - Declartive HTTP API automated testing framework">
+  -->
+  <!-- Open Graph -->
+  <meta name="description" content="众所周知，HTTP 请求和响应的数据都是有格式编码的。 Htte 中描述请求和响应用的是 YAML，其数据是 JS 对象仅包含原始数据类型)。 编码器用来编码 JS 对象请求数据到接口需要的格式，解码接口响应的某种格式的数据到 JS 对象。 例如下测试单元 - describe: 登录成功  api: login  name: johnLogin  req:    body:      usern">
+<meta property="og:type" content="website">
+<meta property="og:title" content="编码器">
+<meta property="og:url" content="https://sigoden.github.io/0.3/docs/serializer.html">
+<meta property="og:site_name" content="Htte - Declartive HTTP API automated testing framework">
+<meta property="og:description" content="众所周知，HTTP 请求和响应的数据都是有格式编码的。 Htte 中描述请求和响应用的是 YAML，其数据是 JS 对象仅包含原始数据类型)。 编码器用来编码 JS 对象请求数据到接口需要的格式，解码接口响应的某种格式的数据到 JS 对象。 例如下测试单元 - describe: 登录成功  api: login  name: johnLogin  req:    body:      usern">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-17T09:18:43.063Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="编码器">
+<meta name="twitter:description" content="众所周知，HTTP 请求和响应的数据都是有格式编码的。 Htte 中描述请求和响应用的是 YAML，其数据是 JS 对象仅包含原始数据类型)。 编码器用来编码 JS 对象请求数据到接口需要的格式，解码接口响应的某种格式的数据到 JS 对象。 例如下测试单元 - describe: 登录成功  api: login  name: johnLogin  req:    body:      usern">
+  <!-- Google Analytics -->
+  <!--  -->
+  <!-- Github Button -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/htte/" id="logo">Htte</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/htte/./0.3/docs/" class="main-nav-link">文档</a>
+      <a href="https://github.com/sigoden/htte" class="main-nav-link">Github</a>
+      <div id="search-input-wrap" class="on">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap" style="display: none">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-Hans" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+  <div id="container">
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">编码器</h1>
+                <a href="https://github.com/sigoden/htte-site/edit/master/source/0.3/docs/serializer.md" class="article-edit-link" title="改进文档"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>众所周知，HTTP 请求和响应的数据都是有格式编码的。</p>
+<p>Htte 中描述请求和响应用的是 YAML，其数据是 JS 对象仅包含原始数据类型)。</p>
+<p>编码器用来编码 JS 对象请求数据到接口需要的格式，解码接口响应的某种格式的数据到 JS 对象。</p>
+<p>例如下测试单元</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">- describe:</span> <span class="string">登录成功</span></span><br><span class="line"><span class="attr">  api:</span> <span class="string">login</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">johnLogin</span></span><br><span class="line"><span class="attr">  req:</span></span><br><span class="line"><span class="attr">    body:</span></span><br><span class="line"><span class="attr">      username:</span> <span class="string">john</span></span><br><span class="line"><span class="attr">      password:</span> <span class="string">johnsblog</span></span><br><span class="line"><span class="attr">  res:</span></span><br><span class="line"><span class="attr">    body:</span></span><br><span class="line"><span class="attr">      username:</span> <span class="string">john</span></span><br><span class="line"><span class="attr">      token:</span> <span class="string">!@exist</span></span><br></pre></td></tr></table></figure>
+<p>如果接口数据类型是 <code>json</code>，则 JSON 编码器会将 JS 数据编码成 JSON 格式字数据 <code>{&quot;username&quot;:&quot;john&quot;,&quot;password&quot;:&quot;johnsblog&quot;}</code> 后发送给接口。</p>
+<p>如果接口数据类型是 <code>xml</code>，则 XML 编码器会将 JS 数据编码成 XML 格式字数据 <code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;root&gt;&lt;password&gt;johnsblog&lt;/password&gt;&lt;username&gt;john&lt;/username&gt;&lt;/root&gt;</code> 后发送给接口。</p>
+<p>如果接口响应头为 <code>application/json</code>, 则 Htte 会使用 JSON 编码器解码响应数据<code>{&quot;username&quot;:&quot;john&quot;,&quot;token&quot;:&quot;....&quot;}</code> 到 JS 对象会与期望数据比对。</p>
+<p>如果接口响应头为 <code>application/xml</code>, 则 Htte 会使用 XML 编码器解码响应数据<code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;root&gt;&lt;token&gt;....&lt;/token&gt;&lt;username&gt;john&lt;/username&gt;&lt;/root&gt;</code> 到 JS 对象会与期望数据比对。</p>
+<p>接口的请求编码类型在接口属性 <code>type</code> 中指定。接口的响应编码类型由 Htte 读取响应头 <code>content-type</code> 后自动全确定。</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-05-17T09:18:43.063Z" itemprop="dateModified">最近更新: 2018-05-17</time>
+                <a href="data-link.html" class="article-footer-prev" title="数据链路"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="cli.html" class="article-footer-next" title="命令行"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">内容</strong>
+              
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><div class="version-selector"><select onchange="changeVersion(this)"><option value="0.3/docs"selected>v0.3</option></select></div><strong class="sidebar-title">快速上手</strong><a href="index.html" class="sidebar-link">概述</a><a href="usage.html" class="sidebar-link">入门</a><a href="examples.html" class="sidebar-link">示例</a><strong class="sidebar-title">指南</strong><a href="config-file.html" class="sidebar-link">配置文件</a><a href="module-file.html" class="sidebar-link">测试模块</a><a href="plugin.html" class="sidebar-link">插件</a><a href="data-link.html" class="sidebar-link">数据链路</a><a href="serializer.html" class="sidebar-link current">编码器</a><a href="cli.html" class="sidebar-link">命令行</a><strong class="sidebar-title">开发</strong><a href="plugin-dev.html" class="sidebar-link">插件</a><a href="serializer-dev.html" class="sidebar-link">编码器</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      Copyright &copy; 2016-2018 <a href="https://github.com/icebob" target="_blank">sigoden</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/sigoden/htte" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/htte/./0.3/docs/" class="mobile-nav-link">文档</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/sigoden/htte" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <div class="version-selector"><select onchange="changeVersion(this)"><option value="0.3/docs"selected>v0.3</option></select></div><strong class="mobile-nav-title">快速上手</strong><a href="index.html" class="mobile-nav-link">概述</a><a href="usage.html" class="mobile-nav-link">入门</a><a href="examples.html" class="mobile-nav-link">示例</a><strong class="mobile-nav-title">指南</strong><a href="config-file.html" class="mobile-nav-link">配置文件</a><a href="module-file.html" class="mobile-nav-link">测试模块</a><a href="plugin.html" class="mobile-nav-link">插件</a><a href="data-link.html" class="mobile-nav-link">数据链路</a><a href="serializer.html" class="mobile-nav-link current">编码器</a><a href="cli.html" class="mobile-nav-link">命令行</a><strong class="mobile-nav-title">开发</strong><a href="plugin-dev.html" class="mobile-nav-link">插件</a><a href="serializer-dev.html" class="mobile-nav-link">编码器</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-Hans" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/htte/js/lang_select.js"></script>
+<script src="/htte/js/version_select.js"></script>
+<script src="/htte/js/scrollingelement.js"></script>
+<script src="/htte/js/toc.js"></script>
+<script src="/htte/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="https://cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '01106fef22715300eea62c55b6d98a2f',
+indexName: 'htte',
+inputSelector: '#search-input',
+algoliaOptions: { 'facetFilters': ["version:0.3"] },
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+
+
+<!-- fastclick -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  FastClick.attach(document.body)
+}, false)
+</script>
+
+</body>
+</html>

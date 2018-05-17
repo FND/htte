@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Htte | HTTP 接口自动化测试框架</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="meta.keywords">
+  <meta name="description" content="Htte 是一款 HTTP 接口自动化测试框架。">
+  <meta name="robots" content="index, follow">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://sigoden.github.io/index.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://sigoden.github.io/en/index.html">
+    
+      <link rel="alternative" hreflang="zh-Hans" href="https://sigoden.github.io/index.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/htte/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/htte/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/htte/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/htte/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/htte/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/htte/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/htte/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/htte/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/htte/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/htte.css -->
+  <link rel="stylesheet" href="/htte/css/htte.css">
+  <!-- endbuild -->
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto Mono|Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <!-- RSS 
+  <link rel="alternate" href="/htte/atom.xml" title="Htte - Declartive HTTP API automated testing framework">
+  -->
+  <!-- Open Graph -->
+  <meta name="description" content="Htte 是一款描述式 HTTP 接口自动测试框架。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Htte - Declartive HTTP API automated testing framework">
+<meta property="og:url" content="https://sigoden.github.io/index.html">
+<meta property="og:site_name" content="Htte - Declartive HTTP API automated testing framework">
+<meta property="og:description" content="Htte 是一款描述式 HTTP 接口自动测试框架。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://sigoden.github.io/images/main-example.png">
+<meta property="og:updated_time" content="2018-05-17T09:18:43.067Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Htte - Declartive HTTP API automated testing framework">
+<meta name="twitter:description" content="Htte 是一款描述式 HTTP 接口自动测试框架。">
+<meta name="twitter:image" content="https://sigoden.github.io/images/main-example.png">
+  <!-- Google Analytics -->
+  <!--  -->
+  <!-- Github Button -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/htte/" id="logo">Htte</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/htte/./0.3/docs/" class="main-nav-link">文档</a>
+      <a href="https://github.com/sigoden/htte" class="main-nav-link">Github</a>
+      <div id="search-input-wrap" class="on">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap" style="display: none">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-Hans" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+  <div id="container">
+    <header id="banner" class="wrapper">
+  <div class="inner">
+    <h1 id="banner-title">Htte</h1>
+    <h2 id="banner-subtitle">描述式 HTTP 接口自动测试框架。</h2>
+    <div id="banner-version">
+      <img src="https://img.shields.io/npm/v/htte.svg"/>
+    </div>
+
+    <div id="banner-start">
+      <span id="banner-start-command">npm install -g htte</span><a id="banner-start-link" href="docs/"><i class="fa fa-arrow-right"></i></a>
+    </div>
+    <div id="banner-badges"><!-- Travis badge -->
+<img src="https://travis-ci.org/sigoden/htte.svg?branch=master" />
+
+<!-- Coveralls badge -->
+<img src="https://coveralls.io/repos/github/sigoden/htte/badge.svg?branch=master" />
+
+<!-- Codacy badge -->
+<img src="https://api.codacy.com/project/badge/Grade/f019843d36f643378a26840660c10f61" />
+
+<!-- Snyk badge -->
+<img src="https://snyk.io/test/github/sigoden/htte/badge.svg?targetFile=package.json" />
+
+<!-- NPM downloads -->
+<!-- img src="https://img.shields.io/npm/dm/sigoden.svg" / -->
+</div>
+    <div id="banner-share"><!-- GitHub Star -->
+<a class="github-button" href="https://github.com/sigoden/htte" data-count-href="/sigoden/htte" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star sigoden/htte on GitHub">Star</a>
+<!-- GitHub fork -->
+<a class="github-button" href="https://github.com/sigoden/htte/fork" data-count-href="/sigoden/htte/fork" data-show-count="true" data-count-aria-label="# forks on GitHub" aria-label="Fork sigoden/htte on GitHub">Fork</a>
+</div>
+  </div>
+</header>
+<div id="content-wrap">
+  <div class="wrapper">
+    <div class="inner">
+      <ul id="intro-feature-list">
+        <li class="intro-feature-wrap">
+          <div class="intro-feature">
+            <div class="intro-feature-icon"><i class="fa fa-file-text"></i></div>
+            <h3 class="intro-feature-title">描述式</h3>
+            <p class="intro-feature-desc">采用 YAML 编写测试，上手简单，开发难度低，与后端代码无耦合。</p>
+          </div>
+        </li>
+        <li class="intro-feature-wrap">
+          <div class="intro-feature">
+            <div class="intro-feature-icon"><i class="fa fa-heart"></i></div>
+            <h3 class="intro-feature-title">简明</h3>
+            <p class="intro-feature-desc">接口测试被简化成描述请求和响应，Htte 后台自动进行请求生成发送，响应比对断言，测试结果打印。</p>
+          </div>
+        </li>
+        <li class="intro-feature-wrap">
+          <div class="intro-feature">
+            <div class="intro-feature-icon"><i class="fa fa-code"></i></div>
+            <h3 class="intro-feature-title">开源</h3>
+            <p class="intro-feature-desc">Htte 使用 MIT 许可证，100% 开源，Github 可见全部代码。</p>
+          </div>
+        </li>
+        <li class="intro-feature-wrap">
+          <div class="intro-feature">
+            <div class="intro-feature-icon"><i class="fa fa-plug"></i></div>
+            <h3 class="intro-feature-title">可扩展</h3>
+            <p class="intro-feature-desc">提供插件自定义请求数据生成和响应数据断言, 允许扩展编码类型以应对多种多样的 Content-Type。</p>
+          </div>
+        </li>
+      </ul>
+      <div style="text-align: center"><br>    <img src="images/main-example.png" style="width: 100%;height: auto;max-width: 600px;"><br></div>
+
+      <div id="intro-get-started-wrap">
+        <a href="./0.3/docs/" id="intro-get-started-link">快速上手</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Particles -->
+<script src="/htte/js/particles.js"></script>
+
+<script type="text/javascript">
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 60,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.1,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 6,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.1,
+      "width": 2
+    },
+    "move": {
+      "enable": true,
+      "speed": 0.5,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": false,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": false,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
+</script>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      Copyright &copy; 2016-2018 <a href="https://github.com/icebob" target="_blank">sigoden</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/sigoden/htte" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/htte/./0.3/docs/" class="mobile-nav-link">文档</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/sigoden/htte" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-Hans" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/htte/js/lang_select.js"></script>
+<script src="/htte/js/version_select.js"></script>
+<script src="/htte/js/scrollingelement.js"></script>
+<script src="/htte/js/toc.js"></script>
+<script src="/htte/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="https://cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '01106fef22715300eea62c55b6d98a2f',
+indexName: 'htte',
+inputSelector: '#search-input',
+algoliaOptions: { 'facetFilters': ["version:0.3"] },
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+
+
+<!-- fastclick -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  FastClick.attach(document.body)
+}, false)
+</script>
+
+</body>
+</html>

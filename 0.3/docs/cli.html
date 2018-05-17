@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>命令行 | Htte | HTTP 接口自动化测试框架</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="meta.keywords">
+  <meta name="description" content="Htte 是一款 HTTP 接口自动化测试框架。">
+  <meta name="robots" content="index, follow">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://sigoden.github.io/0.3/docs/cli.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://sigoden.github.io/en/0.3/docs/cli.html">
+    
+      <link rel="alternative" hreflang="zh-Hans" href="https://sigoden.github.io/0.3/docs/cli.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/htte/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/htte/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/htte/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/htte/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/htte/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/htte/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/htte/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/htte/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/htte/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/htte.css -->
+  <link rel="stylesheet" href="/htte/css/htte.css">
+  <!-- endbuild -->
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto Mono|Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <!-- RSS 
+  <link rel="alternate" href="/htte/atom.xml" title="Htte - Declartive HTTP API automated testing framework">
+  -->
+  <!-- Open Graph -->
+  <meta name="description" content="全局选项 config: 项目配置文件路径，默认 htte.yaml  run运行测试, 是默认命令。  选项:  debug: 打印请求和响应数据　 amend: 从上次中断的地方开始运行测试 bail: 测试不通过，则中断后续测试 unit: 从指定的单元测试处开始运行测试 shot: 执行单个测试，不再运行后续测试   分享一些实用技巧：  某个测试失败时暂停执行  htte --bail">
+<meta property="og:type" content="website">
+<meta property="og:title" content="命令行">
+<meta property="og:url" content="https://sigoden.github.io/0.3/docs/cli.html">
+<meta property="og:site_name" content="Htte - Declartive HTTP API automated testing framework">
+<meta property="og:description" content="全局选项 config: 项目配置文件路径，默认 htte.yaml  run运行测试, 是默认命令。  选项:  debug: 打印请求和响应数据　 amend: 从上次中断的地方开始运行测试 bail: 测试不通过，则中断后续测试 unit: 从指定的单元测试处开始运行测试 shot: 执行单个测试，不再运行后续测试   分享一些实用技巧：  某个测试失败时暂停执行  htte --bail">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-17T09:18:43.063Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="命令行">
+<meta name="twitter:description" content="全局选项 config: 项目配置文件路径，默认 htte.yaml  run运行测试, 是默认命令。  选项:  debug: 打印请求和响应数据　 amend: 从上次中断的地方开始运行测试 bail: 测试不通过，则中断后续测试 unit: 从指定的单元测试处开始运行测试 shot: 执行单个测试，不再运行后续测试   分享一些实用技巧：  某个测试失败时暂停执行  htte --bail">
+  <!-- Google Analytics -->
+  <!--  -->
+  <!-- Github Button -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/htte/" id="logo">Htte</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/htte/./0.3/docs/" class="main-nav-link">文档</a>
+      <a href="https://github.com/sigoden/htte" class="main-nav-link">Github</a>
+      <div id="search-input-wrap" class="on">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap" style="display: none">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-Hans" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+  <div id="container">
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">命令行</h1>
+                <a href="https://github.com/sigoden/htte-site/edit/master/source/0.3/docs/cli.md" class="article-edit-link" title="改进文档"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="全局选项" class="article-heading"><a href="#全局选项" class="headerlink" title="全局选项"></a>全局选项<a class="article-anchor" href="#全局选项" aria-hidden="true"></a></h2><ul>
+<li>config: 项目配置文件路径，默认 <code>htte.yaml</code></li>
+</ul>
+<h2 id="run" class="article-heading"><a href="#run" class="headerlink" title="run"></a>run<a class="article-anchor" href="#run" aria-hidden="true"></a></h2><p>运行测试, 是默认命令。 </p>
+<p>选项:</p>
+<ul>
+<li>debug: 打印请求和响应数据　</li>
+<li>amend: 从上次中断的地方开始运行测试</li>
+<li>bail: 测试不通过，则中断后续测试</li>
+<li>unit: 从指定的单元测试处开始运行测试</li>
+<li>shot: 执行单个测试，不再运行后续测试 </li>
+</ul>
+<p>分享一些实用技巧：</p>
+<ul>
+<li>某个测试失败时暂停执行</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">htte --bail</span><br></pre></td></tr></table></figure>
+<ul>
+<li>从上次失败的地方开始执行, 适合接口调试</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">htte --bail --amend</span><br></pre></td></tr></table></figure>
+<ul>
+<li>仅运行指定测试</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">htte --unit blog-articleUsehtte --shot</span><br></pre></td></tr></table></figure>
+<ul>
+<li>显示调试信息，将同步打印请求响应数据</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">htte --debug</span><br></pre></td></tr></table></figure>
+<h2 id="view" class="article-heading"><a href="#view" class="headerlink" title="view"></a>view<a class="article-anchor" href="#view" aria-hidden="true"></a></h2><p>查看测试, 可以看到测试组织结构。</p>
+<p>选项:</p>
+<ul>
+<li>module: 通过模块名筛选 </li>
+<li>api: 通过 API 筛选</li>
+</ul>
+<h2 id="inspect" class="article-heading"><a href="#inspect" class="headerlink" title="inspect"></a>inspect<a class="article-anchor" href="#inspect" aria-hidden="true"></a></h2><p>审视单元测试，显示该测试一切信息</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ htte inspect auth-johnLogin</span><br><span class="line"></span><br><span class="line">name: johnLogin</span><br><span class="line">module: blog</span><br><span class="line">api:</span><br><span class="line">  name: login</span><br><span class="line">  method: post</span><br><span class="line">  url: &apos;http://localhost:3000/login&apos;</span><br><span class="line">  timeout: 3000</span><br><span class="line">  type: json</span><br><span class="line">  keys: []</span><br><span class="line">req:</span><br><span class="line">  body:</span><br><span class="line">      username: john</span><br><span class="line">      password: johnsblog</span><br><span class="line">res:</span><br><span class="line">  status: 200</span><br><span class="line">  headers:</span><br><span class="line">    x-powered-by: Express</span><br><span class="line">    access-control-allow-origin: &apos;*&apos;</span><br><span class="line">    vary: X-HTTP-Method-Override</span><br><span class="line">    content-type: application/json; charset=utf-8</span><br><span class="line">    content-length: &apos;42&apos;</span><br><span class="line">    etag: W/&quot;ed-/KWrmVNj/2bN/mK81GyveA&quot;</span><br><span class="line">    date: &apos;Fri, 27 Apr 2018 08:41:44 GMT&apos;</span><br><span class="line">    connection: close</span><br><span class="line">  body:</span><br><span class="line">    user:</span><br><span class="line">      username: john</span><br><span class="line">      token: &gt;-</span><br><span class="line">        eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJqb2huamFjb2IiLCJleHAiOjE1MzAwMDI1MDQsImlhdCI6MTUyNDgxODUwNH0.WF-5H8bHNZqMvr8fXZpp6IFCysR0-vQ7T6p1iTQ7tJ0</span><br><span class="line">  time: 82.791432</span><br></pre></td></tr></table></figure>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-05-17T09:18:43.063Z" itemprop="dateModified">最近更新: 2018-05-17</time>
+                <a href="serializer.html" class="article-footer-prev" title="编码器"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="plugin-dev.html" class="article-footer-next" title="插件"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">内容</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#全局选项"><span class="toc-text">全局选项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#run"><span class="toc-text">run</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#view"><span class="toc-text">view</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#inspect"><span class="toc-text">inspect</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><div class="version-selector"><select onchange="changeVersion(this)"><option value="0.3/docs"selected>v0.3</option></select></div><strong class="sidebar-title">快速上手</strong><a href="index.html" class="sidebar-link">概述</a><a href="usage.html" class="sidebar-link">入门</a><a href="examples.html" class="sidebar-link">示例</a><strong class="sidebar-title">指南</strong><a href="config-file.html" class="sidebar-link">配置文件</a><a href="module-file.html" class="sidebar-link">测试模块</a><a href="plugin.html" class="sidebar-link">插件</a><a href="data-link.html" class="sidebar-link">数据链路</a><a href="serializer.html" class="sidebar-link">编码器</a><a href="cli.html" class="sidebar-link current">命令行</a><strong class="sidebar-title">开发</strong><a href="plugin-dev.html" class="sidebar-link">插件</a><a href="serializer-dev.html" class="sidebar-link">编码器</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      Copyright &copy; 2016-2018 <a href="https://github.com/icebob" target="_blank">sigoden</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/sigoden/htte" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/htte/./0.3/docs/" class="mobile-nav-link">文档</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/sigoden/htte" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <div class="version-selector"><select onchange="changeVersion(this)"><option value="0.3/docs"selected>v0.3</option></select></div><strong class="mobile-nav-title">快速上手</strong><a href="index.html" class="mobile-nav-link">概述</a><a href="usage.html" class="mobile-nav-link">入门</a><a href="examples.html" class="mobile-nav-link">示例</a><strong class="mobile-nav-title">指南</strong><a href="config-file.html" class="mobile-nav-link">配置文件</a><a href="module-file.html" class="mobile-nav-link">测试模块</a><a href="plugin.html" class="mobile-nav-link">插件</a><a href="data-link.html" class="mobile-nav-link">数据链路</a><a href="serializer.html" class="mobile-nav-link">编码器</a><a href="cli.html" class="mobile-nav-link current">命令行</a><strong class="mobile-nav-title">开发</strong><a href="plugin-dev.html" class="mobile-nav-link">插件</a><a href="serializer-dev.html" class="mobile-nav-link">编码器</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-Hans" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/htte/js/lang_select.js"></script>
+<script src="/htte/js/version_select.js"></script>
+<script src="/htte/js/scrollingelement.js"></script>
+<script src="/htte/js/toc.js"></script>
+<script src="/htte/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="https://cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '01106fef22715300eea62c55b6d98a2f',
+indexName: 'htte',
+inputSelector: '#search-input',
+algoliaOptions: { 'facetFilters': ["version:0.3"] },
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+
+
+<!-- fastclick -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  FastClick.attach(document.body)
+}, false)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>插件 | Htte | HTTP 接口自动化测试框架</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="meta.keywords">
+  <meta name="description" content="Htte 是一款 HTTP 接口自动化测试框架。">
+  <meta name="robots" content="index, follow">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://sigoden.github.io/0.3/docs/plugin.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://sigoden.github.io/en/0.3/docs/plugin.html">
+    
+      <link rel="alternative" hreflang="zh-Hans" href="https://sigoden.github.io/0.3/docs/plugin.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/htte/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/htte/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/htte/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/htte/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/htte/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/htte/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/htte/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/htte/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/htte/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/htte.css -->
+  <link rel="stylesheet" href="/htte/css/htte.css">
+  <!-- endbuild -->
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto Mono|Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <!-- RSS 
+  <link rel="alternate" href="/htte/atom.xml" title="Htte - Declartive HTTP API automated testing framework">
+  -->
+  <!-- Open Graph -->
+  <meta name="description" content="插件用来自定义请求数据生成和响应数据断言。 在入门篇中有如下代码片段 - describe: 通过标签筛选我的博文  api: listArticles  req:    headers:       Authorization: !$concat [&apos;Bearer&apos;, &apos; &apos;, !$query $$johnLogin.res.body.token]    query:      tag: how">
+<meta property="og:type" content="website">
+<meta property="og:title" content="插件">
+<meta property="og:url" content="https://sigoden.github.io/0.3/docs/plugin.html">
+<meta property="og:site_name" content="Htte - Declartive HTTP API automated testing framework">
+<meta property="og:description" content="插件用来自定义请求数据生成和响应数据断言。 在入门篇中有如下代码片段 - describe: 通过标签筛选我的博文  api: listArticles  req:    headers:       Authorization: !$concat [&apos;Bearer&apos;, &apos; &apos;, !$query $$johnLogin.res.body.token]    query:      tag: how">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-17T09:18:43.063Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="插件">
+<meta name="twitter:description" content="插件用来自定义请求数据生成和响应数据断言。 在入门篇中有如下代码片段 - describe: 通过标签筛选我的博文  api: listArticles  req:    headers:       Authorization: !$concat [&apos;Bearer&apos;, &apos; &apos;, !$query $$johnLogin.res.body.token]    query:      tag: how">
+  <!-- Google Analytics -->
+  <!--  -->
+  <!-- Github Button -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/htte/" id="logo">Htte</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/htte/./0.3/docs/" class="main-nav-link">文档</a>
+      <a href="https://github.com/sigoden/htte" class="main-nav-link">Github</a>
+      <div id="search-input-wrap" class="on">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap" style="display: none">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-Hans" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+  <div id="container">
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">插件</h1>
+                <a href="https://github.com/sigoden/htte-site/edit/master/source/0.3/docs/plugin.md" class="article-edit-link" title="改进文档"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>插件用来自定义请求数据生成和响应数据断言。</p>
+<p>在<a href="./usage.html">入门</a>篇中有如下代码片段</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">- describe:</span> <span class="string">通过标签筛选我的博文</span></span><br><span class="line"><span class="attr">  api:</span> <span class="string">listArticles</span></span><br><span class="line"><span class="attr">  req:</span></span><br><span class="line"><span class="attr">    headers:</span> </span><br><span class="line"><span class="attr">      Authorization:</span> <span class="string">!$concat</span> <span class="string">['Bearer',</span> <span class="string">' '</span><span class="string">,</span> <span class="string">!$query</span> <span class="string">$$johnLogin.res.body.token]</span></span><br><span class="line"><span class="attr">    query:</span></span><br><span class="line"><span class="attr">      tag:</span> <span class="string">howto</span></span><br><span class="line"><span class="attr">  res:</span></span><br><span class="line"><span class="attr">    body:</span></span><br><span class="line"><span class="attr">      articlesCount:</span> <span class="string">!@exist</span></span><br><span class="line"><span class="attr">      articles:</span> <span class="string">!@array</span></span><br><span class="line">        <span class="number">0</span><span class="string">:</span> </span><br><span class="line"><span class="attr">          title:</span> <span class="string">How</span> <span class="string">to</span> <span class="string">use</span> <span class="string">htte</span> <span class="string">plugin</span></span><br><span class="line"><span class="attr">          slug:</span> <span class="string">!@regexp</span> <span class="string">/^how-to-use-htte/</span></span><br><span class="line"><span class="attr">          content:</span> <span class="string">htte</span> <span class="string">plugin</span> <span class="string">is</span> <span class="string">flexiabe</span></span><br><span class="line"><span class="attr">          tags:</span> </span><br><span class="line"><span class="bullet">            -</span> <span class="string">howto</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">htte</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">plugin</span></span><br><span class="line"><span class="attr">          createdAt:</span> <span class="string">!@exist</span></span><br></pre></td></tr></table></figure>
+<p>其中插件 <code>!$concat</code>, <code>!$query</code> 生成请求相关数据，插件 <code>!@exist</code>, <code>!@array</code>, <code>!@regexp</code>, <code>!@exist</code> 断言响应相关数据。 </p>
+<h2 id="缘由" class="article-heading"><a href="#缘由" class="headerlink" title="缘由"></a>缘由<a class="article-anchor" href="#缘由" aria-hidden="true"></a></h2><p>所谓接口测试，就是给出请求数据，然后对比响应数据。</p>
+<p>有时我们无法直接给出请求数据, 比如当前时间。 有时我们也无法完全确定响应数据，比如返回值可能尾部跟个随机字段。测试具有灵活性，而 YAML 一般只能提供具体值。我们无法给出随时在变的“当前时间”。</p>
+<p>我们需要函数，只有函数才具有灵活性，才能应付这些挑战。</p>
+<p>插件正是为了提供这些函数。</p>
+<h2 id="原理" class="article-heading"><a href="#原理" class="headerlink" title="原理"></a>原理<a class="article-anchor" href="#原理" aria-hidden="true"></a></h2><p>为了理解插件工作原理，我们必须先学习一些 YAML 规范。</p>
+<p>在 YAML 中，有 4 种数据类型。</p>
+<ul>
+<li>标量(scalar)</li>
+<li>数组(sequence)</li>
+<li>散列表(mapping)</li>
+<li>标签(tag)</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">scalar:</span> <span class="number">3</span> </span><br><span class="line"></span><br><span class="line"><span class="attr">sequence1:</span> </span><br><span class="line"><span class="bullet">  -</span> <span class="number">1</span></span><br><span class="line"><span class="bullet">  -</span> <span class="number">2</span></span><br><span class="line"><span class="attr">sequence2:</span> <span class="string">[1,</span> <span class="number">2</span><span class="string">]</span></span><br><span class="line"></span><br><span class="line"><span class="attr">mapping1:</span></span><br><span class="line"><span class="attr">  country:</span> <span class="string">china</span></span><br><span class="line"><span class="attr">  captial:</span> <span class="string">beijing</span></span><br><span class="line"><span class="attr">mapping2:</span> <span class="string">&#123;</span> <span class="attr">country:</span> <span class="string">china,</span> <span class="attr">captial:</span> <span class="string">beijing</span> <span class="string">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tag:</span> <span class="string">!$datetime</span> <span class="string">['1d']</span></span><br></pre></td></tr></table></figure>
+<p>其中标签(tag)是实际上是一种函数。YAML 解析引擎碰到标签后，会查找标签库中是否存在该标签，如果存在就获取该标签绑定的函数，将标签后的数据作为参数传递给标签函数，以函数返回值作为最终数据。</p>
+<p>插件将函数封装成 YAML 标签，Htte 加载插件并将这些标签注册到 YAML 解析引擎中。函数在 YAML 中以 YAML 标签的形式存在。</p>
+<h2 id="种类" class="article-heading"><a href="#种类" class="headerlink" title="种类"></a>种类<a class="article-anchor" href="#种类" aria-hidden="true"></a></h2><p>htte 提供了两类插件 </p>
+<ul>
+<li><p>resolver<br>用来生成请求数据, 其 yaml 标签带有前缀 <code>!$</code>, 如 <code>!$datetime</code> 返回时间字符串</p>
+</li>
+<li><p>differ<br>用来对比验证响应数据, 其 yaml 标签带有前缀 <code>!@</code>, 如 <code>!@regexp</code> 验证数据是否是否匹配正则</p>
+</li>
+</ul>
+<h2 id="内置插件" class="article-heading"><a href="#内置插件" class="headerlink" title="内置插件"></a>内置插件<a class="article-anchor" href="#内置插件" aria-hidden="true"></a></h2><p>Htte 提供了一些内置插件，这些插件不需要额外安装，可以直接使用。</p>
+<p>这些插件的功能和基础，一般测试中都有用到。 它们也是例子，可以参照它们编写你自己的插件。如果你发现某个重要的功能应该包含在内置插件中，欢迎提交 issue 或 pull request.</p>
+<h3 id="query" class="article-heading"><a href="#query" class="headerlink" title="!$query"></a>!$query<a class="article-anchor" href="#query" aria-hidden="true"></a></h3><p><code>!$query</code>: 获取数据链路指向的数据, 参数类型为 scalar</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">!$query</span> <span class="string">$auth.login.req.body.user.token</span> <span class="comment"># 返回 auth 模块下的名为 login 测试的响应数据中的 user.token 值</span></span><br></pre></td></tr></table></figure>
+<h3 id="concat" class="article-heading"><a href="#concat" class="headerlink" title="!$concat"></a>!$concat<a class="article-anchor" href="#concat" aria-hidden="true"></a></h3><p><code>!$concat</code>: 连接一组字符串, 参数类型为 sequence</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">!$concat:</span> <span class="string">[a,</span> <span class="string">b,</span> <span class="string">c]</span> <span class="comment"># "abc"</span></span><br><span class="line"><span class="string">!$concat:</span> <span class="string">[Bearer,</span> <span class="string">' '</span><span class="string">,</span> <span class="string">!$query</span> <span class="string">$auth.login.req.body.user.token]</span> <span class="comment"># "Bearer &lt;token值&gt;", 参数可以嵌套其它 resolver</span></span><br></pre></td></tr></table></figure>
+<h3 id="datetime" class="article-heading"><a href="#datetime" class="headerlink" title="!$datetime"></a>!$datetime<a class="article-anchor" href="#datetime" aria-hidden="true"></a></h3><p><code>!$datetime</code>: 生成时间字符串, 参数类型为 sequence</p>
+<p>接受一个数组，第一个参数是控制选项 <code>&lt;offset&gt;:&lt;format&gt;</code> , 第二个是基准时间</p>
+<p>偏移量是时间字符串参考 <a href="https://www.npmjs.com/package/timestring" target="_blank" rel="noopener">timestring</a><br>支持的格式参考 <a href="https://www.npmjs.com/package/dateformat#mask-options" target="_blank" rel="noopener">dateformat</a></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">!$datetime</span> <span class="comment"># 2018-04-25T02:29:03.572Z，当前时间</span></span><br><span class="line"><span class="string">!$datetime</span> <span class="string">['1d']</span> <span class="comment"># 2018-04-26T02:29:03.572Z, 明天</span></span><br><span class="line"><span class="string">!$datetime</span> <span class="string">['-</span> <span class="number">1</span><span class="string">d']</span> <span class="comment"># 2018-04-24T02:29:03.572Z, 昨天</span></span><br><span class="line"><span class="string">!$datetime</span> <span class="string">['-</span> <span class="number">1</span><span class="string">d',</span> <span class="string">'2018-04-24T02:29:03.572Z'</span><span class="string">]</span> <span class="comment"># 2018-04-23T02:29:03.572Z</span></span><br><span class="line"><span class="string">!$datetime</span> <span class="string">['1d</span> <span class="number">2</span><span class="string">h',</span> <span class="string">'2018-04-24T02:29:03.572Z'</span><span class="string">]</span> <span class="comment"># 2018-04-25T04:29:03.572Z</span></span><br><span class="line"><span class="string">!$datetime</span> <span class="string">['1d:isoDate',</span> <span class="string">'2018-04-24T02:29:03.572Z'</span><span class="string">]</span> <span class="comment"># 2018-04-25</span></span><br><span class="line"><span class="string">!$datetime</span> <span class="string">['1d:isoTime',</span> <span class="string">'2018-04-24T02:29:03.572Z'</span><span class="string">]</span> <span class="comment"># 04:29:03</span></span><br><span class="line"><span class="string">!$datetime</span> <span class="string">[':ddd</span> <span class="string">mmm</span> <span class="string">dd</span> <span class="string">yyyy</span> <span class="attr">HH:MM:ss',</span> <span class="string">'2018-04-24T02:29:03.572Z'</span><span class="string">]</span> <span class="comment"># Tuesday, April 24th, 2018, 10:29:03 AM'</span></span><br></pre></td></tr></table></figure>
+<h3 id="randstr" class="article-heading"><a href="#randstr" class="headerlink" title="!$randstr"></a>!$randstr<a class="article-anchor" href="#randstr" aria-hidden="true"></a></h3><p><code>!randstr</code>: 随机字符串，参数类型为 scalar</p>
+<p>接受一个参数 <code>&lt;length&gt;:&lt;flag&gt;</code> 用来控制随机数生成。 flag 有三个基本类: <code>l</code> 表示小写, <code>u</code> 表示大写，<code>n</code> 表示数字，flag 间可以组合</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">!$randstr</span> <span class="comment"># 5xa4Wi</span></span><br><span class="line"><span class="string">!$randstr</span> <span class="comment"># Qdf4dY</span></span><br><span class="line"><span class="string">!$randstr</span> <span class="number">8</span> <span class="comment"># 9sw2DhxH</span></span><br><span class="line"><span class="string">!$randstr</span> <span class="number">4</span><span class="string">:l</span> <span class="comment"># abuz  4位小写</span></span><br><span class="line"><span class="string">!$randstr</span> <span class="number">4</span><span class="string">:u</span> <span class="comment"># AZGH  4位大写</span></span><br><span class="line"><span class="string">!$randstr</span> <span class="number">4</span><span class="string">:n</span> <span class="comment"># 3273  4位数字</span></span><br><span class="line"><span class="string">!$randstr</span> <span class="number">4</span><span class="string">:lu</span> <span class="comment"># AzYs  4位大小写</span></span><br><span class="line"><span class="string">!$randstr</span> <span class="number">4</span><span class="string">:ln</span> <span class="comment"># 2zl3  4位小写 + 数字</span></span><br><span class="line"><span class="string">!$randstr</span> <span class="number">4</span><span class="string">:un</span> <span class="comment"># Y23P  4位大写 + 数字</span></span><br><span class="line"><span class="string">!$randstr</span> <span class="number">4</span><span class="string">:lun</span> <span class="comment"># Y23p  4位大小写+ 数字 </span></span><br><span class="line"><span class="string">!$randstr</span> <span class="number">4</span> <span class="comment"># Y23p  4位大小写+ 数字 </span></span><br><span class="line"><span class="string">!$randstr</span> <span class="string">:un</span> <span class="comment"># Y23p  4位大写 + 数字</span></span><br></pre></td></tr></table></figure>
+<h3 id="query-1" class="article-heading"><a href="#query-1" class="headerlink" title="!@query"></a>!@query<a class="article-anchor" href="#query-1" aria-hidden="true"></a></h3><p><code>!@query</code>: 比对数据是否与链路指向数据相等, 参数类型为 scalar</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">res:</span></span><br><span class="line"><span class="attr">  body:</span></span><br><span class="line"><span class="attr">    email:</span> <span class="string">!@query</span> <span class="string">$$$res.body.email</span></span><br></pre></td></tr></table></figure>
+<p>如果响应数据有字段 email 且与请求数据 email 值相等，为真</p>
+<h3 id="exist" class="article-heading"><a href="#exist" class="headerlink" title="!@exist"></a>!@exist<a class="article-anchor" href="#exist" aria-hidden="true"></a></h3><p><code>!@exist</code>: 是否存在字段，参数类型为 scalar</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">res:</span></span><br><span class="line"><span class="attr">  body:</span></span><br><span class="line"><span class="attr">    username:</span> <span class="string">!@exist</span></span><br><span class="line"><span class="attr">    token:</span> <span class="string">!@exist</span></span><br></pre></td></tr></table></figure>
+<p>如果测试返回的结果是对象，有且仅有属性 username, token, 为真。不关注具体值，仅关注属性存在与否。</p>
+<h3 id="regexp" class="article-heading"><a href="#regexp" class="headerlink" title="!@regexp"></a>!@regexp<a class="article-anchor" href="#regexp" aria-hidden="true"></a></h3><p><code>!@regexp</code>: 是否匹配正则，参数类型为 scalar</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">res:</span></span><br><span class="line"><span class="attr">  body:</span></span><br><span class="line"><span class="attr">    slug:</span> <span class="string">!@regexp</span> <span class="string">/^how-to-train-your-dragon-\\w&#123;6&#125;$/</span></span><br></pre></td></tr></table></figure>
+<p>如果响应数据有字段 slug，为字符串且匹配正则，为真</p>
+<h3 id="array" class="article-heading"><a href="#array" class="headerlink" title="!@array"></a>!@array<a class="article-anchor" href="#array" aria-hidden="true"></a></h3><p><code>!@array</code>: 数组部分校验，参数类型为 mapping</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">res:</span></span><br><span class="line"><span class="attr">  body:</span> <span class="string">!@array</span></span><br><span class="line">    <span class="number">0</span><span class="string">:</span> <span class="string">dragon</span></span><br></pre></td></tr></table></figure>
+<p>如果响应数据字段值为数组且第一个元素值为 dragon，为真<br>这里我们仅对第一个元素敢兴趣，所以仅做部分校验。</p>
+<p>如果我们还对数组长度敢兴趣，可以断言长度</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">res:</span></span><br><span class="line"><span class="attr">  body:</span> <span class="string">!@array</span></span><br><span class="line">    <span class="number">0</span><span class="string">:</span> <span class="string">dragon</span></span><br><span class="line"><span class="attr">    length:</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p>Htte 默认情况下会对数组进行全等校验。这意味着必须列出全部元素，并保证顺序和值正确。</p>
+<h3 id="object" class="article-heading"><a href="#object" class="headerlink" title="!@object"></a>!@object<a class="article-anchor" href="#object" aria-hidden="true"></a></h3><p><code>!@object</code>: 对象部分校验，参数类型会 mapping</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">res:</span></span><br><span class="line"><span class="attr">  body:</span> <span class="string">!@object</span></span><br><span class="line"><span class="attr">    email:</span> <span class="string">john@jacob</span></span><br></pre></td></tr></table></figure>
+<p>如果响应数据中用字段 email 且值为 john@jacob 为真。如果省略 <code>!@object</code> 标签，表示数据有且仅有字段 email。</p>
+<p>Htte 默认情况下会对对象进行全等校验。不能有多的字段，也不能有少的字段。</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-05-17T09:18:43.063Z" itemprop="dateModified">最近更新: 2018-05-17</time>
+                <a href="module-file.html" class="article-footer-prev" title="测试模块"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="data-link.html" class="article-footer-next" title="数据链路"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">内容</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#缘由"><span class="toc-text">缘由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原理"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#种类"><span class="toc-text">种类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内置插件"><span class="toc-text">内置插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#query"><span class="toc-text">!$query</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#concat"><span class="toc-text">!$concat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#datetime"><span class="toc-text">!$datetime</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#randstr"><span class="toc-text">!$randstr</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#query-1"><span class="toc-text">!@query</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#exist"><span class="toc-text">!@exist</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#regexp"><span class="toc-text">!@regexp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#array"><span class="toc-text">!@array</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#object"><span class="toc-text">!@object</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><div class="version-selector"><select onchange="changeVersion(this)"><option value="0.3/docs"selected>v0.3</option></select></div><strong class="sidebar-title">快速上手</strong><a href="index.html" class="sidebar-link">概述</a><a href="usage.html" class="sidebar-link">入门</a><a href="examples.html" class="sidebar-link">示例</a><strong class="sidebar-title">指南</strong><a href="config-file.html" class="sidebar-link">配置文件</a><a href="module-file.html" class="sidebar-link">测试模块</a><a href="plugin.html" class="sidebar-link current">插件</a><a href="data-link.html" class="sidebar-link">数据链路</a><a href="serializer.html" class="sidebar-link">编码器</a><a href="cli.html" class="sidebar-link">命令行</a><strong class="sidebar-title">开发</strong><a href="plugin-dev.html" class="sidebar-link">插件</a><a href="serializer-dev.html" class="sidebar-link">编码器</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      Copyright &copy; 2016-2018 <a href="https://github.com/icebob" target="_blank">sigoden</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/sigoden/htte" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/htte/./0.3/docs/" class="mobile-nav-link">文档</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/sigoden/htte" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <div class="version-selector"><select onchange="changeVersion(this)"><option value="0.3/docs"selected>v0.3</option></select></div><strong class="mobile-nav-title">快速上手</strong><a href="index.html" class="mobile-nav-link">概述</a><a href="usage.html" class="mobile-nav-link">入门</a><a href="examples.html" class="mobile-nav-link">示例</a><strong class="mobile-nav-title">指南</strong><a href="config-file.html" class="mobile-nav-link">配置文件</a><a href="module-file.html" class="mobile-nav-link">测试模块</a><a href="plugin.html" class="mobile-nav-link current">插件</a><a href="data-link.html" class="mobile-nav-link">数据链路</a><a href="serializer.html" class="mobile-nav-link">编码器</a><a href="cli.html" class="mobile-nav-link">命令行</a><strong class="mobile-nav-title">开发</strong><a href="plugin-dev.html" class="mobile-nav-link">插件</a><a href="serializer-dev.html" class="mobile-nav-link">编码器</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-Hans" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/htte/js/lang_select.js"></script>
+<script src="/htte/js/version_select.js"></script>
+<script src="/htte/js/scrollingelement.js"></script>
+<script src="/htte/js/toc.js"></script>
+<script src="/htte/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="https://cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '01106fef22715300eea62c55b6d98a2f',
+indexName: 'htte',
+inputSelector: '#search-input',
+algoliaOptions: { 'facetFilters': ["version:0.3"] },
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+
+
+<!-- fastclick -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  FastClick.attach(document.body)
+}, false)
+</script>
+
+</body>
+</html>

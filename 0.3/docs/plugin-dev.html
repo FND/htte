@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>开发插件 | Htte | HTTP 接口自动化测试框架</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="meta.keywords">
+  <meta name="description" content="Htte 是一款 HTTP 接口自动化测试框架。">
+  <meta name="robots" content="index, follow">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://sigoden.github.io/0.3/docs/plugin-dev.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://sigoden.github.io/en/0.3/docs/plugin-dev.html">
+    
+      <link rel="alternative" hreflang="zh-Hans" href="https://sigoden.github.io/0.3/docs/plugin-dev.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/htte/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/htte/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/htte/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/htte/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/htte/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/htte/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/htte/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/htte/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/htte/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/htte.css -->
+  <link rel="stylesheet" href="/htte/css/htte.css">
+  <!-- endbuild -->
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto Mono|Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <!-- RSS 
+  <link rel="alternate" href="/htte/atom.xml" title="Htte - Declartive HTTP API automated testing framework">
+  -->
+  <!-- Open Graph -->
+  <meta name="description" content="插件用来自定义请求数据生成和响应数据断言。 Htte 中有两类插件，一类用来定义请求数据生成, 称为 resolver；一类用来自定义响应断言，称为 differ; resolver !$concat 源码:module.exports = &amp;#123;  name: &apos;concat&apos;,  kind: &apos;sequence&apos;,  handler: (context, literal) =&amp;gt; &amp;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="开发插件">
+<meta property="og:url" content="https://sigoden.github.io/0.3/docs/plugin-dev.html">
+<meta property="og:site_name" content="Htte - Declartive HTTP API automated testing framework">
+<meta property="og:description" content="插件用来自定义请求数据生成和响应数据断言。 Htte 中有两类插件，一类用来定义请求数据生成, 称为 resolver；一类用来自定义响应断言，称为 differ; resolver !$concat 源码:module.exports = &amp;#123;  name: &apos;concat&apos;,  kind: &apos;sequence&apos;,  handler: (context, literal) =&amp;gt; &amp;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-17T09:18:43.063Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="开发插件">
+<meta name="twitter:description" content="插件用来自定义请求数据生成和响应数据断言。 Htte 中有两类插件，一类用来定义请求数据生成, 称为 resolver；一类用来自定义响应断言，称为 differ; resolver !$concat 源码:module.exports = &amp;#123;  name: &apos;concat&apos;,  kind: &apos;sequence&apos;,  handler: (context, literal) =&amp;gt; &amp;">
+  <!-- Google Analytics -->
+  <!--  -->
+  <!-- Github Button -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/htte/" id="logo">Htte</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/htte/./0.3/docs/" class="main-nav-link">文档</a>
+      <a href="https://github.com/sigoden/htte" class="main-nav-link">Github</a>
+      <div id="search-input-wrap" class="on">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap" style="display: none">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-Hans" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+  <div id="container">
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">开发插件</h1>
+                <a href="https://github.com/sigoden/htte-site/edit/master/source/0.3/docs/plugin-dev.md" class="article-edit-link" title="改进文档"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>插件用来自定义请求数据生成和响应数据断言。</p>
+<p>Htte 中有两类插件，一类用来定义请求数据生成, 称为 <code>resolver</code>；一类用来自定义响应断言，称为 <code>differ</code>;</p>
+<p>resolver <code>!$concat</code> 源码:<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  name: <span class="string">'concat'</span>,</span><br><span class="line">  kind: <span class="string">'sequence'</span>,</span><br><span class="line">  handler: <span class="function">(<span class="params">context, literal</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">Array</span>.isArray(literal)) &#123;</span><br><span class="line">      <span class="keyword">return</span> context.error(<span class="string">'arguments must be array'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> literal.join(<span class="string">''</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>differ <code>!$exist</code> 源码:<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  name: <span class="string">'exist'</span>,</span><br><span class="line">  kind: <span class="string">'scalar'</span>,</span><br><span class="line">  handler: <span class="function">(<span class="params">context, literal, actual</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (actual !== <span class="literal">undefined</span>) <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    <span class="keyword">return</span> context.error(<span class="string">'property do not exist'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>插件其实就是一个对象，有三个属性:</p>
+<ul>
+<li><code>name</code>: 插件名，对应标签名</li>
+<li><code>kind</code>: 参数类型，可选值 <code>scalar</code>, <code>sequence</code>, <code>mapping</code></li>
+<li><code>handler</code>: 插件函数</li>
+</ul>
+<h2 id="插件函数" class="article-heading"><a href="#插件函数" class="headerlink" title="插件函数"></a>插件函数<a class="article-anchor" href="#插件函数" aria-hidden="true"></a></h2><p>resolver 的插件函数用来生成数据，所以返回值是某种数据。</p>
+<p>其两个参数</p>
+<ul>
+<li>context: 上下文对象 <a href="#ContextResolve">ContextResolve</a></li>
+<li>literal: 标签参数, 如<code>!$concat [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code>，标签参数是数组 [‘a’, ‘b’, ‘c’]；<code>!$randstr 8</code>，标签参数是字符串 “8”。</li>
+</ul>
+<p>该函数的范式是：首先校验标签参数，然后结合便签参数生成具体数据。</p>
+<p>differ 的插件函数用来判断数据匹配，所以返回值是 <code>Boolean</code>。</p>
+<p>其有三个参数</p>
+<ul>
+<li>context: 上下文对象 <a href="#ContextDiff">ContextDiff</a></li>
+<li>literal: 标签参数，也就是期待的响应数据</li>
+<li>actual: 实际响应数据</li>
+</ul>
+<p>该函数的范式是：首先校验标签参数，然后将该数据与实际响应数据比较，判断它们是否匹配。</p>
+<h2 id="ContextResolve" class="article-heading"><a href="#ContextResolve" class="headerlink" title="ContextResolve"></a>ContextResolve<a class="article-anchor" href="#ContextResolve" aria-hidden="true"></a></h2><p>ContextResolve 是 resolver 插件函数的第一参数。它提供了一些辅助 API 。</p>
+<h3 id="error" class="article-heading"><a href="#error" class="headerlink" title="error"></a>error<a class="article-anchor" href="#error" aria-hidden="true"></a></h3><p><code>error(msg)</code></p>
+<p>报告错误信息。如果插件因为某种错误无法生成需要的数据，可以使用该函数报告错误，Htte 负责将给错误信息呈递给用户。</p>
+<h3 id="enter" class="article-heading"><a href="#enter" class="headerlink" title="enter"></a>enter<a class="article-anchor" href="#enter" aria-hidden="true"></a></h3><p><code>enter(title)</code></p>
+<p>进入次级上下文，返回一个新 ContextResolve 对象。</p>
+<p>如果参数是 <code>{ msg: &#39;something wrong&#39; }</code>，我们需要报告 msg  的值有问题，直接 <code>context.error(&#39;something wrong&#39;)</code> 将打印<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">req:</span><br><span class="line">  body:</span><br><span class="line">    something wrong</span><br></pre></td></tr></table></figure></p>
+<p>如果使用 <code>context.enter(&#39;msg&#39;).error(&#39;something wrong&#39;)</code> 将打印<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">req:</span><br><span class="line">  body:</span><br><span class="line">    msg: something wrong</span><br></pre></td></tr></table></figure></p>
+<h2 id="ContextDiff" class="article-heading"><a href="#ContextDiff" class="headerlink" title="ContextDiff"></a>ContextDiff<a class="article-anchor" href="#ContextDiff" aria-hidden="true"></a></h2><p>ContextDiff 是 differ 插件函数的第一参数。它提供了一些辅助 API 。</p>
+<h3 id="diff" class="article-heading"><a href="#diff" class="headerlink" title="diff"></a>diff<a class="article-anchor" href="#diff" aria-hidden="true"></a></h3><p><code>diff(context, literal, actual, isStrict)</code></p>
+<p>该函数与插件的 <code>handler</code> 函数类似，它会将 <code>literal</code> 值与 <code>actual</code> 值进行比较，判断它们是否相等，并返回比较结果。</p>
+<p><code>literal</code> 和 <code>actual</code> 可以是任何值。</p>
+<p>其中 <code>isStrict</code> 是一个 <code>Boolean</code>，用来控制比较行为。默认为 <code>true</code>。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">diff(context, &#123;a: 3&#125;, &#123;a: 3, b: 4&#125;, true) # 返回 false</span><br><span class="line">diff(context, &#123;a: 3&#125;, &#123;a: 3, b: 4&#125;, false) # 返回 true</span><br><span class="line">diff(context, [&#123;a:3&#125;], [&#123;a:3&#125;,&#123;a:4&#125;], false) # 返回 true</span><br></pre></td></tr></table></figure>
+<h3 id="error-1" class="article-heading"><a href="#error-1" class="headerlink" title="error"></a>error<a class="article-anchor" href="#error-1" aria-hidden="true"></a></h3><p><code>error(msg)</code></p>
+<p>使用方法同 <code>ContextResolve.error</code></p>
+<h3 id="enter-1" class="article-heading"><a href="#enter-1" class="headerlink" title="enter"></a>enter<a class="article-anchor" href="#enter-1" aria-hidden="true"></a></h3><p><code>enter(title)</code></p>
+<p>使用方法同 <code>ContextResolve.enter</code></p>
+<h2 id="模块" class="article-heading"><a href="#模块" class="headerlink" title="模块"></a>模块<a class="article-anchor" href="#模块" aria-hidden="true"></a></h2><p>插件太零散了，直接注册不是那么方便。所以我们通过插件模块的组织插件。</p>
+<p>Htte 的配置项 <code>plugins</code> 提供插件模块注册入口。</p>
+<p>插件模块示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  differ: [</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'./differ/and'</span>),</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'./differ/array'</span>),</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'./differ/exist'</span>),</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'./differ/object'</span>),</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'./differ/or'</span>),</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'./differ/query'</span>),</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'./differ/regexp'</span>)</span><br><span class="line">  ],</span><br><span class="line">  resolver: [</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'./resolver/concat'</span>),</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'./resolver/datetime'</span>),</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'./resolver/query'</span>),</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'./resolver/randstr'</span>)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-05-17T09:18:43.063Z" itemprop="dateModified">最近更新: 2018-05-17</time>
+                <a href="cli.html" class="article-footer-prev" title="命令行"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="serializer-dev.html" class="article-footer-next" title="编码器"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">内容</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#插件函数"><span class="toc-text">插件函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ContextResolve"><span class="toc-text">ContextResolve</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#error"><span class="toc-text">error</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#enter"><span class="toc-text">enter</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ContextDiff"><span class="toc-text">ContextDiff</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#diff"><span class="toc-text">diff</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#error-1"><span class="toc-text">error</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#enter-1"><span class="toc-text">enter</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模块"><span class="toc-text">模块</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><div class="version-selector"><select onchange="changeVersion(this)"><option value="0.3/docs"selected>v0.3</option></select></div><strong class="sidebar-title">快速上手</strong><a href="index.html" class="sidebar-link">概述</a><a href="usage.html" class="sidebar-link">入门</a><a href="examples.html" class="sidebar-link">示例</a><strong class="sidebar-title">指南</strong><a href="config-file.html" class="sidebar-link">配置文件</a><a href="module-file.html" class="sidebar-link">测试模块</a><a href="plugin.html" class="sidebar-link">插件</a><a href="data-link.html" class="sidebar-link">数据链路</a><a href="serializer.html" class="sidebar-link">编码器</a><a href="cli.html" class="sidebar-link">命令行</a><strong class="sidebar-title">开发</strong><a href="plugin-dev.html" class="sidebar-link current">插件</a><a href="serializer-dev.html" class="sidebar-link">编码器</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      Copyright &copy; 2016-2018 <a href="https://github.com/icebob" target="_blank">sigoden</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/sigoden/htte" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/htte/./0.3/docs/" class="mobile-nav-link">文档</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/sigoden/htte" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <div class="version-selector"><select onchange="changeVersion(this)"><option value="0.3/docs"selected>v0.3</option></select></div><strong class="mobile-nav-title">快速上手</strong><a href="index.html" class="mobile-nav-link">概述</a><a href="usage.html" class="mobile-nav-link">入门</a><a href="examples.html" class="mobile-nav-link">示例</a><strong class="mobile-nav-title">指南</strong><a href="config-file.html" class="mobile-nav-link">配置文件</a><a href="module-file.html" class="mobile-nav-link">测试模块</a><a href="plugin.html" class="mobile-nav-link">插件</a><a href="data-link.html" class="mobile-nav-link">数据链路</a><a href="serializer.html" class="mobile-nav-link">编码器</a><a href="cli.html" class="mobile-nav-link">命令行</a><strong class="mobile-nav-title">开发</strong><a href="plugin-dev.html" class="mobile-nav-link current">插件</a><a href="serializer-dev.html" class="mobile-nav-link">编码器</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-Hans" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/htte/js/lang_select.js"></script>
+<script src="/htte/js/version_select.js"></script>
+<script src="/htte/js/scrollingelement.js"></script>
+<script src="/htte/js/toc.js"></script>
+<script src="/htte/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="https://cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '01106fef22715300eea62c55b6d98a2f',
+indexName: 'htte',
+inputSelector: '#search-input',
+algoliaOptions: { 'facetFilters': ["version:0.3"] },
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+
+
+<!-- fastclick -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  FastClick.attach(document.body)
+}, false)
+</script>
+
+</body>
+</html>

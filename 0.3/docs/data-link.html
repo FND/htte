@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>数据链接 | Htte | HTTP 接口自动化测试框架</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="meta.keywords">
+  <meta name="description" content="Htte 是一款 HTTP 接口自动化测试框架。">
+  <meta name="robots" content="index, follow">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://sigoden.github.io/0.3/docs/data-link.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://sigoden.github.io/en/0.3/docs/data-link.html">
+    
+      <link rel="alternative" hreflang="zh-Hans" href="https://sigoden.github.io/0.3/docs/data-link.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/htte/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/htte/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/htte/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/htte/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/htte/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/htte/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/htte/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/htte/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/htte/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/htte.css -->
+  <link rel="stylesheet" href="/htte/css/htte.css">
+  <!-- endbuild -->
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto Mono|Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <!-- RSS 
+  <link rel="alternate" href="/htte/atom.xml" title="Htte - Declartive HTTP API automated testing framework">
+  -->
+  <!-- Open Graph -->
+  <meta name="description" content="数据链接是一种访问其它测试请求和响应数据的机制。 入门-添加博文接口测试代码中 - describe: 添加博文成功  api: createArticle  name: articleUsehtte  req:    headers:       Authorization: !$concat [&apos;Bearer&apos;, &apos; &apos;, !$query $$johnLogin.res.body.token]">
+<meta property="og:type" content="website">
+<meta property="og:title" content="数据链接">
+<meta property="og:url" content="https://sigoden.github.io/0.3/docs/data-link.html">
+<meta property="og:site_name" content="Htte - Declartive HTTP API automated testing framework">
+<meta property="og:description" content="数据链接是一种访问其它测试请求和响应数据的机制。 入门-添加博文接口测试代码中 - describe: 添加博文成功  api: createArticle  name: articleUsehtte  req:    headers:       Authorization: !$concat [&apos;Bearer&apos;, &apos; &apos;, !$query $$johnLogin.res.body.token]">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-17T09:18:43.063Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据链接">
+<meta name="twitter:description" content="数据链接是一种访问其它测试请求和响应数据的机制。 入门-添加博文接口测试代码中 - describe: 添加博文成功  api: createArticle  name: articleUsehtte  req:    headers:       Authorization: !$concat [&apos;Bearer&apos;, &apos; &apos;, !$query $$johnLogin.res.body.token]">
+  <!-- Google Analytics -->
+  <!--  -->
+  <!-- Github Button -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/htte/" id="logo">Htte</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/htte/./0.3/docs/" class="main-nav-link">文档</a>
+      <a href="https://github.com/sigoden/htte" class="main-nav-link">Github</a>
+      <div id="search-input-wrap" class="on">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap" style="display: none">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-Hans" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+  <div id="container">
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">数据链接</h1>
+                <a href="https://github.com/sigoden/htte-site/edit/master/source/0.3/docs/data-link.md" class="article-edit-link" title="改进文档"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>数据链接是一种访问其它测试请求和响应数据的机制。</p>
+<p><a href="./usage.html#添加博文">入门-添加博文</a>接口测试代码中</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">- describe:</span> <span class="string">添加博文成功</span></span><br><span class="line"><span class="attr">  api:</span> <span class="string">createArticle</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">articleUsehtte</span></span><br><span class="line"><span class="attr">  req:</span></span><br><span class="line"><span class="attr">    headers:</span> </span><br><span class="line"><span class="attr">      Authorization:</span> <span class="string">!$concat</span> <span class="string">['Bearer',</span> <span class="string">' '</span><span class="string">,</span> <span class="string">!$query</span> <span class="string">$$johnLogin.res.body.token]</span></span><br><span class="line"><span class="attr">    body:</span></span><br><span class="line"><span class="attr">      title:</span> <span class="string">How</span> <span class="string">to</span> <span class="string">use</span> <span class="string">htte</span></span><br><span class="line"><span class="attr">      content:</span> <span class="string">htte</span> <span class="string">is</span> <span class="string">http</span> <span class="string">automation</span> <span class="string">testing</span> <span class="string">tool</span></span><br><span class="line"><span class="attr">      tags:</span> </span><br><span class="line"><span class="bullet">        -</span> <span class="string">howto</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">htte</span></span><br><span class="line"><span class="attr">  res:</span></span><br><span class="line"><span class="attr">    body:</span></span><br><span class="line"><span class="attr">      title:</span> <span class="string">How</span> <span class="string">to</span> <span class="string">use</span> <span class="string">htte</span></span><br><span class="line"><span class="attr">      slug:</span> <span class="string">!@regexp</span> <span class="string">/^how-to-use-htte/</span></span><br><span class="line"><span class="attr">      content:</span> <span class="string">htte</span> <span class="string">is</span> <span class="string">http</span> <span class="string">automation</span> <span class="string">testing</span> <span class="string">tool</span></span><br><span class="line"><span class="attr">      tags:</span> </span><br><span class="line"><span class="bullet">        -</span> <span class="string">howto</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">htte</span></span><br><span class="line"><span class="attr">      createdAt:</span> <span class="string">!@exist</span></span><br></pre></td></tr></table></figure>
+<p>就使用数据链接 <code>$$johnLogin.res.body.token</code> 引用测试 <code>johnLogin</code> 中响应数据 <code>token</code>。</p>
+<h2 id="缘由" class="article-heading"><a href="#缘由" class="headerlink" title="缘由"></a>缘由<a class="article-anchor" href="#缘由" aria-hidden="true"></a></h2><p>Web 服务一般来说是有状态的，所以导致接口直接的执行是有顺序的，甚至接口之间还可能存在数据联系。</p>
+<p>例如用户如果要发表文章，需要先进行账号注册。因为发表文章的接口需要注册接口里的 token 数据。</p>
+<p>需要一种机制来获取其它测试接口的数据。这种机制就是数据链接。</p>
+<h2 id="数据来源" class="article-heading"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源<a class="article-anchor" href="#数据来源" aria-hidden="true"></a></h2><p>Htte 执行单元测试是，会生成相关的请求和响应数据, 这些数据被记录在会话中，并被持久化到磁盘 <code>sessionFile</code>。</p>
+<p>接口的请求和响应数据是数据链接的主要数据源。此外，还有<a href="./config-file.html#exports">配置项<code>exports</code></a>中的数据。</p>
+<p>测试接口时产生的数据是什么样子呢？</p>
+<p>以上面的接口测试单元 <code>articleUsehtte</code> 为例, 它会产生如下记录</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  blog: &#123;</span><br><span class="line">    articleUsehtte: &#123;</span><br><span class="line">      req: &#123;</span><br><span class="line">        headers: &#123;</span><br><span class="line">          Authorization: <span class="string">`Bearer <span class="subst">$&#123;token&#125;</span>`</span></span><br><span class="line">        &#125;,</span><br><span class="line">        body: &#123;</span><br><span class="line">          title: <span class="string">'How to use htte'</span>,</span><br><span class="line">          content: <span class="string">'htte is http automation testing tool'</span>,</span><br><span class="line">          tags: [<span class="string">'howto'</span>, <span class="string">'htte'</span>]</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;</span><br><span class="line">      res: &#123;</span><br><span class="line">        status: <span class="number">200</span>,</span><br><span class="line">        headers: &#123;</span><br><span class="line">          Content-Type: <span class="string">'application/json; charset=utf8'</span>,</span><br><span class="line">            ...</span><br><span class="line">        &#125;,</span><br><span class="line">        body: &#123;</span><br><span class="line">          title: <span class="string">'How to use htte'</span>,</span><br><span class="line">          slug: <span class="string">'how-to-use-htte-A2sdfF'</span>,</span><br><span class="line">          content: <span class="string">'htte is http automation testing tool'</span>,</span><br><span class="line">          tags: [<span class="string">'howto'</span>, <span class="string">'htte'</span>],</span><br><span class="line">          createdAt: <span class="string">'2018-04-25T02:29:03.572Z'</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="链接" class="article-heading"><a href="#链接" class="headerlink" title="链接"></a>链接<a class="article-anchor" href="#链接" aria-hidden="true"></a></h2><p>每个测试完成后，都生成一条记录，这条记录包含很多信息, 但我们使用是常常只需要某个具体的值，比如 tags，比如 slug。</p>
+<p>数据是一个 json 对象，从根对象到具体的某个值有一系列属性段，如到 <code>slug</code>　有属性段 <code>blog</code>, <code>articleUsehtte</code>, <code>res</code>, <code>body</code>, <code>slug</code><br>这些属性段连接起来就是数据的链接。用 <code>$</code> 代表根对象，<code>slug</code> 的链接是 <code>$blog.articleUsehtte.res.body.slug</code></p>
+<p>使用这种链接策略有点:</p>
+<ul>
+<li>灵活，数据的任何部分多可以定位并被访问 <ul>
+<li>容易，数据路径很容易得出</li>
+</ul>
+</li>
+<li>安全，数据是只读的，数据路径也是只读的 </li>
+</ul>
+<h2 id="根对象" class="article-heading"><a href="#根对象" class="headerlink" title="根对象"></a>根对象<a class="article-anchor" href="#根对象" aria-hidden="true"></a></h2><p>数据链接需要一个根对象，根对象有:</p>
+<ul>
+<li>$: 所有测试数据集合</li>
+<li>$$: 当前模块下测试数据集合，等价与 <code>$&lt;当前模块名&gt;</code></li>
+<li>$$$: 当前测试单元下测试数据集合，等价与 <code>$&lt;当前模块名&gt;&lt;当前测试名&gt;</code></li>
+<li>$$$$: 配置导出数据，以配置项 <code>exports</code> 对象作为根对象</li>
+</ul>
+<h2 id="query-插件" class="article-heading"><a href="#query-插件" class="headerlink" title="query 插件"></a>query 插件<a class="article-anchor" href="#query-插件" aria-hidden="true"></a></h2><p>由于数据链接实际上只是一个字符串，YAML 本身并不识别它，所以需要结合插件使用。</p>
+<p>识别数据链接的插件有两个 <code>!$query</code> 和 <code>!@query</code>，前者用来获取链接指向的数据，后者用来比对数据是否与链接指向数据相等。</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-05-17T09:18:43.063Z" itemprop="dateModified">最近更新: 2018-05-17</time>
+                <a href="plugin.html" class="article-footer-prev" title="插件"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="serializer.html" class="article-footer-next" title="编码器"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">内容</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#缘由"><span class="toc-text">缘由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据来源"><span class="toc-text">数据来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链接"><span class="toc-text">链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#根对象"><span class="toc-text">根对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#query-插件"><span class="toc-text">query 插件</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><div class="version-selector"><select onchange="changeVersion(this)"><option value="0.3/docs"selected>v0.3</option></select></div><strong class="sidebar-title">快速上手</strong><a href="index.html" class="sidebar-link">概述</a><a href="usage.html" class="sidebar-link">入门</a><a href="examples.html" class="sidebar-link">示例</a><strong class="sidebar-title">指南</strong><a href="config-file.html" class="sidebar-link">配置文件</a><a href="module-file.html" class="sidebar-link">测试模块</a><a href="plugin.html" class="sidebar-link">插件</a><a href="data-link.html" class="sidebar-link current">数据链路</a><a href="serializer.html" class="sidebar-link">编码器</a><a href="cli.html" class="sidebar-link">命令行</a><strong class="sidebar-title">开发</strong><a href="plugin-dev.html" class="sidebar-link">插件</a><a href="serializer-dev.html" class="sidebar-link">编码器</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      Copyright &copy; 2016-2018 <a href="https://github.com/icebob" target="_blank">sigoden</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/sigoden/htte" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/htte/./0.3/docs/" class="mobile-nav-link">文档</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/sigoden/htte" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <div class="version-selector"><select onchange="changeVersion(this)"><option value="0.3/docs"selected>v0.3</option></select></div><strong class="mobile-nav-title">快速上手</strong><a href="index.html" class="mobile-nav-link">概述</a><a href="usage.html" class="mobile-nav-link">入门</a><a href="examples.html" class="mobile-nav-link">示例</a><strong class="mobile-nav-title">指南</strong><a href="config-file.html" class="mobile-nav-link">配置文件</a><a href="module-file.html" class="mobile-nav-link">测试模块</a><a href="plugin.html" class="mobile-nav-link">插件</a><a href="data-link.html" class="mobile-nav-link current">数据链路</a><a href="serializer.html" class="mobile-nav-link">编码器</a><a href="cli.html" class="mobile-nav-link">命令行</a><strong class="mobile-nav-title">开发</strong><a href="plugin-dev.html" class="mobile-nav-link">插件</a><a href="serializer-dev.html" class="mobile-nav-link">编码器</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-Hans" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/htte/js/lang_select.js"></script>
+<script src="/htte/js/version_select.js"></script>
+<script src="/htte/js/scrollingelement.js"></script>
+<script src="/htte/js/toc.js"></script>
+<script src="/htte/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="https://cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '01106fef22715300eea62c55b6d98a2f',
+indexName: 'htte',
+inputSelector: '#search-input',
+algoliaOptions: { 'facetFilters': ["version:0.3"] },
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+
+
+<!-- fastclick -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  FastClick.attach(document.body)
+}, false)
+</script>
+
+</body>
+</html>

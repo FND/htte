@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>入门 | Htte | HTTP 接口自动化测试框架</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="meta.keywords">
+  <meta name="description" content="Htte 是一款 HTTP 接口自动化测试框架。">
+  <meta name="robots" content="index, follow">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://sigoden.github.io/0.3/docs/usage.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://sigoden.github.io/en/0.3/docs/usage.html">
+    
+      <link rel="alternative" hreflang="zh-Hans" href="https://sigoden.github.io/0.3/docs/usage.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/htte/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/htte/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/htte/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/htte/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/htte/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/htte/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/htte/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/htte/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/htte/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/htte/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/htte.css -->
+  <link rel="stylesheet" href="/htte/css/htte.css">
+  <!-- endbuild -->
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto Mono|Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <!-- RSS 
+  <link rel="alternate" href="/htte/atom.xml" title="Htte - Declartive HTTP API automated testing framework">
+  -->
+  <!-- Open Graph -->
+  <meta name="description" content="本文以测试一款超简单的博客应用作为例子，介绍如何使用 Htte。 安装使用 npm 安装 htte 命令行: npm i -g htte 接口详情这款博客应用只有四个接口。  登录接口  功能: 用户登录请求路径: localhost:3000/login请求方法: POST请求头: &amp;#123; &amp;quot;Content-Type&amp;quot;: &amp;quot;application/json&amp;q">
+<meta property="og:type" content="website">
+<meta property="og:title" content="入门">
+<meta property="og:url" content="https://sigoden.github.io/0.3/docs/usage.html">
+<meta property="og:site_name" content="Htte - Declartive HTTP API automated testing framework">
+<meta property="og:description" content="本文以测试一款超简单的博客应用作为例子，介绍如何使用 Htte。 安装使用 npm 安装 htte 命令行: npm i -g htte 接口详情这款博客应用只有四个接口。  登录接口  功能: 用户登录请求路径: localhost:3000/login请求方法: POST请求头: &amp;#123; &amp;quot;Content-Type&amp;quot;: &amp;quot;application/json&amp;q">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-17T09:18:43.063Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="入门">
+<meta name="twitter:description" content="本文以测试一款超简单的博客应用作为例子，介绍如何使用 Htte。 安装使用 npm 安装 htte 命令行: npm i -g htte 接口详情这款博客应用只有四个接口。  登录接口  功能: 用户登录请求路径: localhost:3000/login请求方法: POST请求头: &amp;#123; &amp;quot;Content-Type&amp;quot;: &amp;quot;application/json&amp;q">
+  <!-- Google Analytics -->
+  <!--  -->
+  <!-- Github Button -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/htte/" id="logo">Htte</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/htte/./0.3/docs/" class="main-nav-link">文档</a>
+      <a href="https://github.com/sigoden/htte" class="main-nav-link">Github</a>
+      <div id="search-input-wrap" class="on">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap" style="display: none">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-Hans" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+  <div id="container">
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">入门</h1>
+                <a href="https://github.com/sigoden/htte-site/edit/master/source/0.3/docs/usage.md" class="article-edit-link" title="改进文档"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>本文以测试一款超简单的博客应用作为例子，介绍如何使用 Htte。</p>
+<h2 id="安装" class="article-heading"><a href="#安装" class="headerlink" title="安装"></a>安装<a class="article-anchor" href="#安装" aria-hidden="true"></a></h2><p>使用 npm 安装 htte 命令行:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -g htte</span><br></pre></td></tr></table></figure>
+<h2 id="接口详情" class="article-heading"><a href="#接口详情" class="headerlink" title="接口详情"></a>接口详情<a class="article-anchor" href="#接口详情" aria-hidden="true"></a></h2><p>这款博客应用只有四个接口。</p>
+<ul>
+<li>登录接口</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">功能: 用户登录</span><br><span class="line">请求路径: localhost:3000/login</span><br><span class="line">请求方法: POST</span><br><span class="line">请求头: &#123; &quot;Content-Type&quot;: &quot;application/json&quot; &#125;</span><br><span class="line">请求数据: &#123;&quot;username&quot;: &quot;john&quot;, &quot;password&quot;: &quot;johnsblog&quot;&#125;</span><br><span class="line">响应:</span><br><span class="line">  - 状况: 用户名和密码正确</span><br><span class="line">    响应状态码： 200</span><br><span class="line">    响应数据: &#123;&quot;name&quot;: &quot;john&quot;, &quot;token&quot;: &quot;...&quot;&#125;</span><br><span class="line">  - 状况: 用户名或密码不正确</span><br><span class="line">    响应状态码： 401</span><br><span class="line">    响应数据: &#123;&quot;errcode&quot;: 11001, &quot;message&quot;: &quot;invalid username or password&quot;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加博文</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">功能: 添加博文</span><br><span class="line">请求路径: localhost:3000/articles</span><br><span class="line">请求方法: POST</span><br><span class="line">请求头: &#123; &quot;Content-Type&quot;: &quot;application/json&quot;, &quot;Authorization&quot;: &quot;Bearer ...&quot; &#125;</span><br><span class="line">请求数据: &gt;</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;title&quot;: &quot;How to use htte&quot;,</span><br><span class="line">    &quot;content&quot;: &quot;htte is ....&quot;,</span><br><span class="line">    &quot;tags&quot;: [&quot;howto&quot;, &quot;htte&quot;]</span><br><span class="line">  &#125;</span><br><span class="line">响应:</span><br><span class="line">  - 状况: 添加成功</span><br><span class="line">    响应状态码： 200</span><br><span class="line">    响应数据: &gt;</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;title&quot;: &quot;How to use htte&quot;,</span><br><span class="line">        &quot;slug&quot;: &quot;how-to-use-htte-A43bcF&quot;,</span><br><span class="line">        &quot;content&quot;: &quot;htte is ....&quot;,</span><br><span class="line">        &quot;tags&quot;: [&quot;howto&quot;, &quot;htte&quot;],</span><br><span class="line">        &quot;createdAt&quot;: &quot;2018-04-28T07:35:08.471Z&quot;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>编辑博文</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">功能: 编辑博文</span><br><span class="line">请求路径: localhost:3000/article/how-to-use-htte-A43b</span><br><span class="line">请求方法: PUT</span><br><span class="line">请求头: &#123; &quot;Content-Type&quot;: &quot;application/json&quot;, &quot;Authorization&quot;: &quot;Bearer ...&quot; &#125;</span><br><span class="line">请求数据: &gt;</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;title&quot;: &quot;How to create htte plugin&quot;,</span><br><span class="line">    &quot;content&quot;: &quot;htte plugin is ....&quot;,</span><br><span class="line">    &quot;tags&quot;: [&quot;howto&quot;, &quot;htte&quot;, &quot;plugin&quot;]</span><br><span class="line">  &#125;</span><br><span class="line">响应:</span><br><span class="line">  - 状况: 编辑成功</span><br><span class="line">    响应状态码： 200</span><br><span class="line">    响应数据: &gt;</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;title&quot;: &quot;How to use htte plugin&quot;,</span><br><span class="line">        &quot;slug&quot;: &quot;how-to-use-htte-A43b&quot;,</span><br><span class="line">        &quot;content&quot;: &quot;htte plugin is ....&quot;,</span><br><span class="line">        &quot;tags&quot;: [&quot;howto&quot;, &quot;htte&quot;, &quot;plugin&quot;],</span><br><span class="line">        &quot;createdAt&quot;: &quot;2018-04-28T07:35:08.471Z&quot;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取博文列表</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">功能: 获取所有博文</span><br><span class="line">请求路径: localhost:3000/articles</span><br><span class="line">请求方法: GET</span><br><span class="line">请求头: &#123; &quot;Content-Type&quot;: &quot;application/json&quot;, &quot;Authorization&quot;: &quot;Bearer ...&quot; &#125;</span><br><span class="line">querystring: tag=howto</span><br><span class="line">响应:</span><br><span class="line">  - 状况: 成功</span><br><span class="line">    响应状态码： 200</span><br><span class="line">    响应数据: </span><br><span class="line">      &#123;</span><br><span class="line">        &quot;articlesCount&quot;: 1,</span><br><span class="line">        &quot;articles&quot;: [</span><br><span class="line">          &#123;</span><br><span class="line">            &quot;title&quot;: &quot;How to use htte plugin&quot;,</span><br><span class="line">            &quot;slug&quot;: &quot;how-to-use-htte-A43b&quot;,</span><br><span class="line">            &quot;content&quot;: &quot;htte plugin is ....&quot;,</span><br><span class="line">            &quot;tags&quot;: [&quot;howto&quot;, &quot;htte&quot;, &quot;plugin&quot;],</span><br><span class="line">            &quot;createdAt&quot;: &quot;2018-04-28T07:35:08.471Z&quot;</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="接口测试" class="article-heading"><a href="#接口测试" class="headerlink" title="接口测试"></a>接口测试<a class="article-anchor" href="#接口测试" aria-hidden="true"></a></h2><p>添加<a href="./usage.html">配置文件</a> <code>htte.yaml</code>，描述接口</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="attr">http://localhost:3000</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">json</span></span><br><span class="line"><span class="attr">apis:</span></span><br><span class="line"><span class="attr">  login:</span></span><br><span class="line"><span class="attr">    method:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">    uri:</span> <span class="string">/login</span></span><br><span class="line"><span class="attr">  createArticle:</span></span><br><span class="line"><span class="attr">    method:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">    uri:</span> <span class="string">/articles</span></span><br><span class="line"><span class="attr">  updateArticle:</span></span><br><span class="line"><span class="attr">    method:</span> <span class="string">put</span></span><br><span class="line"><span class="attr">    uri:</span> <span class="string">/article/&#123;slug&#125;</span></span><br><span class="line"><span class="attr">  listArticles:</span> <span class="string">/articles</span></span><br></pre></td></tr></table></figure>
+<p>添加<a href="./module-file.html">测试模块</a> <code>blog.yaml</code>，编写测试。</p>
+<h3 id="登录失败" class="article-heading"><a href="#登录失败" class="headerlink" title="登录失败"></a>登录失败<a class="article-anchor" href="#登录失败" aria-hidden="true"></a></h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">units:</span></span><br><span class="line"><span class="attr">  - describe:</span> <span class="string">登录失败</span></span><br><span class="line"><span class="attr">    api:</span> <span class="string">login</span></span><br><span class="line"><span class="attr">    req:</span></span><br><span class="line"><span class="attr">      body:</span></span><br><span class="line"><span class="attr">        username:</span> <span class="string">john</span></span><br><span class="line"><span class="attr">        password:</span> <span class="string">johnblog</span></span><br><span class="line"><span class="attr">    res:</span></span><br><span class="line"><span class="attr">      status:</span> <span class="number">401</span></span><br><span class="line"><span class="attr">      body:</span></span><br><span class="line"><span class="attr">        errcode:</span> <span class="number">11001</span></span><br><span class="line"><span class="attr">        message:</span> <span class="string">!@exist</span></span><br></pre></td></tr></table></figure>
+<p><code>describe</code> 描述测试的目的，该字段会在最好的测试报告中呈现。</p>
+<p><code>api</code> 描述被测试的接口，该字段关联配置文件中的接口定义。</p>
+<p><code>req</code> 定义请求数据, <code>body</code>下的数据会封装到请求体 <code>{&quot;username&quot;: &quot;john&quot;, &quot;password&quot;: &quot;johnblog&quot;}</code>。</p>
+<p><code>res</code> 期望响应数据。如果与实际响应数据不匹配，会导致测试不通过。</p>
+<p>当 htte 载入这段测试代码，会构造请求，也就是会往 <code>http://localhost:3000/login</code> 发送 <code>post</code> 请求，<br>有请求头 <code>{&quot;Content-Type&quot;: &quot;application/json&quot;}</code>, 及请求体 <code>{&quot;username&quot;: &quot;john&quot;, &quot;password&quot;: &quot;johnblog&quot;}</code>。<br>当服务端响应后，会对响应的数据作如下断言</p>
+<ul>
+<li>响应状态码为 401</li>
+<li>响应体是一个对象</li>
+<li>响应体对象有且仅有两个属性 <code>errcode</code> 和 <code>message</code></li>
+<li>响应体对象的 <code>errcode</code> 属性值为 11001</li>
+<li>响应体对象的 <code>message</code> 属性值为 <code>invalid username or password</code></li>
+</ul>
+<p>所以断言全部通过，测试才会通过。如响应状态码不为 401 或者响应体中多了其它其它字段，都是不完全匹配，会导致测试失败。</p>
+<h3 id="登录成功" class="article-heading"><a href="#登录成功" class="headerlink" title="登录成功"></a>登录成功<a class="article-anchor" href="#登录成功" aria-hidden="true"></a></h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">- describe:</span> <span class="string">登录成功</span></span><br><span class="line"><span class="attr">  api:</span> <span class="string">login</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">johnLogin</span></span><br><span class="line"><span class="attr">  req:</span></span><br><span class="line"><span class="attr">    body:</span></span><br><span class="line"><span class="attr">      username:</span> <span class="string">john</span></span><br><span class="line"><span class="attr">      password:</span> <span class="string">johnsblog</span></span><br><span class="line"><span class="attr">  res:</span></span><br><span class="line"><span class="attr">    body:</span></span><br><span class="line"><span class="attr">      username:</span> <span class="string">john</span></span><br><span class="line"><span class="attr">      token:</span> <span class="string">!@exist</span></span><br></pre></td></tr></table></figure>
+<p><code>name</code> 定义测试名称，后续测试可以通过该名称访问该 测试数据，比如响应的 <code>token</code> 值。</p>
+<p><code>res</code> 中省略了 <code>status</code>，并不代表不检查状态码了。对于这种情况 htte 会检查是否状态码在 200-299 范围内。</p>
+<p><code>token</code> 的值是变动的，我们检查其具体值。所以使用 YAML 标签 <code>!@exist</code> 进行一种特殊的检查。其验证 <code>token</code> 字段存在，不校验其具体值。</p>
+<p><code>!@exist</code> 由 htte 插件提供。在只关注字段有无而不在意值的情况下使用。</p>
+<h3 id="添加博文" class="article-heading"><a href="#添加博文" class="headerlink" title="添加博文"></a>添加博文<a class="article-anchor" href="#添加博文" aria-hidden="true"></a></h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">- describe:</span> <span class="string">添加博文成功</span></span><br><span class="line"><span class="attr">  api:</span> <span class="string">createArticle</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">articleUsehtte</span></span><br><span class="line"><span class="attr">  req:</span></span><br><span class="line"><span class="attr">    headers:</span> </span><br><span class="line"><span class="attr">      Authorization:</span> <span class="string">!$concat</span> <span class="string">['Bearer',</span> <span class="string">' '</span><span class="string">,</span> <span class="string">!$query</span> <span class="string">$$johnLogin.res.body.token]</span></span><br><span class="line"><span class="attr">    body:</span></span><br><span class="line"><span class="attr">      title:</span> <span class="string">How</span> <span class="string">to</span> <span class="string">use</span> <span class="string">htte</span></span><br><span class="line"><span class="attr">      content:</span> <span class="string">htte</span> <span class="string">is</span> <span class="string">http</span> <span class="string">automation</span> <span class="string">testing</span> <span class="string">tool</span></span><br><span class="line"><span class="attr">      tags:</span> </span><br><span class="line"><span class="bullet">        -</span> <span class="string">howto</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">htte</span></span><br><span class="line"><span class="attr">  res:</span></span><br><span class="line"><span class="attr">    body:</span></span><br><span class="line"><span class="attr">      title:</span> <span class="string">How</span> <span class="string">to</span> <span class="string">use</span> <span class="string">htte</span></span><br><span class="line"><span class="attr">      slug:</span> <span class="string">!@regexp</span> <span class="string">/^how-to-use-htte/</span></span><br><span class="line"><span class="attr">      content:</span> <span class="string">htte</span> <span class="string">is</span> <span class="string">http</span> <span class="string">automation</span> <span class="string">testing</span> <span class="string">tool</span></span><br><span class="line"><span class="attr">      tags:</span> </span><br><span class="line"><span class="bullet">        -</span> <span class="string">howto</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">htte</span></span><br><span class="line"><span class="attr">      createdAt:</span> <span class="string">!@exist</span></span><br></pre></td></tr></table></figure>
+<p><code>headers</code> 描述请求头。它将向发送的请求头中追加 <code>Authorization</code> 头。</p>
+<p>添加博文接口会进行 JWT 权限校验，因此我们需要添加 <code>Authorization</code> 头，提供登录 <code>token</code>。</p>
+<p>这个 <code>token</code> 可以从测试 <code>johnLogin</code> 中获取。我们通过标签 <code>!$query</code> 引用这个 <code>token</code> 值。</p>
+<blockquote>
+<p>htte 会通过会话记录运行过的测试的请求和响应数据，你可以这种方式获取位于你前面的测试的数据。不需要预先定义，只需要定位（访问路径）。</p>
+</blockquote>
+<p>然后使用标签 <code>!$concat</code> 拼接 <code>Bearer</code> 和 <code>token</code> 值得到 <code>Authorization</code> 的具体值。</p>
+<p><code>slug</code> 表示博文的访问链接，通过 title 拼接一个 4 个字符的随机字符串生成。它也不是一个具体值，所以我们使用 <code>!@regexp</code> 进行正这而匹配验证。</p>
+<blockquote>
+<p>大多情况下，测试的请求数据及预期响应数据是可以给定的，但总免不了会碰到一些特殊状况，这是就需要使用插件了。htte 许多内置插件，它们<br>应该足够应对绝大多数常见了。如果碰到无法处理的情况，可以发 issue 或编写插件。</p>
+</blockquote>
+<h3 id="编辑博文" class="article-heading"><a href="#编辑博文" class="headerlink" title="编辑博文"></a>编辑博文<a class="article-anchor" href="#编辑博文" aria-hidden="true"></a></h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">- describe:</span> <span class="string">编辑博文成功</span></span><br><span class="line"><span class="attr">  api:</span> <span class="string">updateArticle</span></span><br><span class="line"><span class="attr">  req:</span></span><br><span class="line"><span class="attr">    headers:</span> </span><br><span class="line"><span class="attr">      Authorization:</span> <span class="string">!$concat</span> <span class="string">['Bearer',</span> <span class="string">' '</span><span class="string">,</span> <span class="string">!$query</span> <span class="string">$$johnLogin.res.body.token]</span></span><br><span class="line"><span class="attr">    params:</span></span><br><span class="line"><span class="attr">      slug:</span> <span class="string">!$query</span> <span class="string">$$articleUsehtte.res.body.slug</span></span><br><span class="line"><span class="attr">  res:</span></span><br><span class="line"><span class="attr">    body:</span></span><br><span class="line"><span class="attr">      title:</span> <span class="string">How</span> <span class="string">to</span> <span class="string">use</span> <span class="string">htte</span> <span class="string">plugin</span></span><br><span class="line"><span class="attr">      slug:</span> <span class="string">!@query</span> <span class="string">$$$req.params.slug</span></span><br><span class="line"><span class="attr">      content:</span> <span class="string">htte</span> <span class="string">plugin</span> <span class="string">is</span> <span class="string">flexiabe</span></span><br><span class="line"><span class="attr">      tags:</span> </span><br><span class="line"><span class="bullet">       -</span> <span class="string">howto</span></span><br><span class="line"><span class="bullet">       -</span> <span class="string">htte</span></span><br><span class="line"><span class="bullet">       -</span> <span class="string">plugin</span></span><br><span class="line"><span class="attr">      createdAt:</span> <span class="number">2018</span><span class="bullet">-04</span><span class="bullet">-28</span><span class="attr">T07:35:08.471Z</span></span><br></pre></td></tr></table></figure>
+<p><code>params</code> 描述路径参数，该测试的请求路径是 <code>/article/{slug}</code>，带有路径参数 slug,<br>发送请求前 htte 会将替换成 <code>params</code> 中对应的值，最终的请求路径是 <code>/article/how-to-use-htte-A43bcF</code></p>
+<p><code>!@query</code> 标签检验响应值是否某个引用值相等，用来判断更新文章或 slug 是否改变。</p>
+<h3 id="获取博文列表" class="article-heading"><a href="#获取博文列表" class="headerlink" title="获取博文列表"></a>获取博文列表<a class="article-anchor" href="#获取博文列表" aria-hidden="true"></a></h3><h4 id="获取我的所有博文" class="article-heading"><a href="#获取我的所有博文" class="headerlink" title="获取我的所有博文"></a>获取我的所有博文<a class="article-anchor" href="#获取我的所有博文" aria-hidden="true"></a></h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">- describe:</span> <span class="string">获取我的所有博文</span></span><br><span class="line"><span class="attr">  api:</span> <span class="string">listArticles</span></span><br><span class="line"><span class="attr">  req:</span></span><br><span class="line"><span class="attr">    headers:</span> </span><br><span class="line"><span class="attr">      Authorization:</span> <span class="string">!$concat</span> <span class="string">['Bearer',</span> <span class="string">' '</span><span class="string">,</span> <span class="string">!$query</span> <span class="string">$$johnLogin.res.body.token]</span></span><br><span class="line"><span class="attr">  res:</span></span><br><span class="line"><span class="attr">    body:</span></span><br><span class="line"><span class="attr">      articlesCount:</span> <span class="string">!@exist</span></span><br><span class="line"><span class="attr">      articles:</span> <span class="string">!@array</span></span><br><span class="line">        <span class="number">0</span><span class="string">:</span> </span><br><span class="line"><span class="attr">          title:</span> <span class="string">How</span> <span class="string">to</span> <span class="string">use</span> <span class="string">htte</span> <span class="string">plugin</span></span><br><span class="line"><span class="attr">          slug:</span> <span class="string">!@regexp</span> <span class="string">/^how-to-use-htte/</span></span><br><span class="line"><span class="attr">          content:</span> <span class="string">htte</span> <span class="string">plugin</span> <span class="string">is</span> <span class="string">flexiabe</span></span><br><span class="line"><span class="attr">          tags:</span> </span><br><span class="line"><span class="bullet">            -</span> <span class="string">howto</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">htte</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">plugin</span></span><br><span class="line"><span class="attr">          createdAt:</span> <span class="string">!@exist</span></span><br></pre></td></tr></table></figure>
+<p><code>!@array</code> 要特别注意。Htte 常规状态下比对数组时，会先比对元素个数，在逐一比对个元素。<br>而 <code>articles</code> 可能是一个长度不固定的数组，，这种状况下进行常规比对没有意义。<br>使用 <code>!@array</code> 自定义数组比对行为，使其仅比对特定的元素，比如该测试中，就表示仅对第一个元素进行比对，忽略其它元素。<br>如果该元素匹配，则测试通过。</p>
+<h4 id="通过标签筛选我的博文" class="article-heading"><a href="#通过标签筛选我的博文" class="headerlink" title="通过标签筛选我的博文"></a>通过标签筛选我的博文<a class="article-anchor" href="#通过标签筛选我的博文" aria-hidden="true"></a></h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">- describe:</span> <span class="string">通过标签筛选我的博文</span></span><br><span class="line"><span class="attr">  api:</span> <span class="string">listArticles</span></span><br><span class="line"><span class="attr">  req:</span></span><br><span class="line"><span class="attr">    headers:</span> </span><br><span class="line"><span class="attr">      Authorization:</span> <span class="string">!$concat</span> <span class="string">['Bearer',</span> <span class="string">' '</span><span class="string">,</span> <span class="string">!$query</span> <span class="string">$$johnLogin.res.body.token]</span></span><br><span class="line"><span class="attr">    query:</span></span><br><span class="line"><span class="attr">      tag:</span> <span class="string">howto</span></span><br><span class="line"><span class="attr">  res:</span></span><br><span class="line"><span class="attr">    body:</span></span><br><span class="line"><span class="attr">      articlesCount:</span> <span class="string">!@exist</span></span><br><span class="line"><span class="attr">      articles:</span> <span class="string">!@array</span></span><br><span class="line">        <span class="number">0</span><span class="string">:</span> </span><br><span class="line"><span class="attr">          title:</span> <span class="string">How</span> <span class="string">to</span> <span class="string">use</span> <span class="string">htte</span> <span class="string">plugin</span></span><br><span class="line"><span class="attr">          slug:</span> <span class="string">!@regexp</span> <span class="string">/^how-to-use-htte/</span></span><br><span class="line"><span class="attr">          content:</span> <span class="string">htte</span> <span class="string">plugin</span> <span class="string">is</span> <span class="string">flexiabe</span></span><br><span class="line"><span class="attr">          tags:</span> </span><br><span class="line"><span class="bullet">            -</span> <span class="string">howto</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">htte</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">plugin</span></span><br><span class="line"><span class="attr">          createdAt:</span> <span class="string">!@exist</span></span><br></pre></td></tr></table></figure>
+<p><code>query</code> 描述 querystring, 测时的 url 将变成 <code>http://localhost:3000/articles?tag=howto</code>。</p>
+<h2 id="执行测试" class="article-heading"><a href="#执行测试" class="headerlink" title="执行测试"></a>执行测试<a class="article-anchor" href="#执行测试" aria-hidden="true"></a></h2><p>保证 Web 可用的情况下，运行命令<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ htte</span><br></pre></td></tr></table></figure></p>
+<p>htte 会逐一执行测试单元并打印测试执行的结果。</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-05-17T09:18:43.063Z" itemprop="dateModified">最近更新: 2018-05-17</time>
+                <a href="index.html" class="article-footer-prev" title="概述"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="examples.html" class="article-footer-next" title="示例"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">内容</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接口详情"><span class="toc-text">接口详情</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接口测试"><span class="toc-text">接口测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#登录失败"><span class="toc-text">登录失败</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#登录成功"><span class="toc-text">登录成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加博文"><span class="toc-text">添加博文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编辑博文"><span class="toc-text">编辑博文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取博文列表"><span class="toc-text">获取博文列表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行测试"><span class="toc-text">执行测试</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><div class="version-selector"><select onchange="changeVersion(this)"><option value="0.3/docs"selected>v0.3</option></select></div><strong class="sidebar-title">快速上手</strong><a href="index.html" class="sidebar-link">概述</a><a href="usage.html" class="sidebar-link current">入门</a><a href="examples.html" class="sidebar-link">示例</a><strong class="sidebar-title">指南</strong><a href="config-file.html" class="sidebar-link">配置文件</a><a href="module-file.html" class="sidebar-link">测试模块</a><a href="plugin.html" class="sidebar-link">插件</a><a href="data-link.html" class="sidebar-link">数据链路</a><a href="serializer.html" class="sidebar-link">编码器</a><a href="cli.html" class="sidebar-link">命令行</a><strong class="sidebar-title">开发</strong><a href="plugin-dev.html" class="sidebar-link">插件</a><a href="serializer-dev.html" class="sidebar-link">编码器</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      Copyright &copy; 2016-2018 <a href="https://github.com/icebob" target="_blank">sigoden</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/sigoden/htte" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/htte/./0.3/docs/" class="mobile-nav-link">文档</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/sigoden/htte" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <div class="version-selector"><select onchange="changeVersion(this)"><option value="0.3/docs"selected>v0.3</option></select></div><strong class="mobile-nav-title">快速上手</strong><a href="index.html" class="mobile-nav-link">概述</a><a href="usage.html" class="mobile-nav-link current">入门</a><a href="examples.html" class="mobile-nav-link">示例</a><strong class="mobile-nav-title">指南</strong><a href="config-file.html" class="mobile-nav-link">配置文件</a><a href="module-file.html" class="mobile-nav-link">测试模块</a><a href="plugin.html" class="mobile-nav-link">插件</a><a href="data-link.html" class="mobile-nav-link">数据链路</a><a href="serializer.html" class="mobile-nav-link">编码器</a><a href="cli.html" class="mobile-nav-link">命令行</a><strong class="mobile-nav-title">开发</strong><a href="plugin-dev.html" class="mobile-nav-link">插件</a><a href="serializer-dev.html" class="mobile-nav-link">编码器</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-Hans" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/htte/js/lang_select.js"></script>
+<script src="/htte/js/version_select.js"></script>
+<script src="/htte/js/scrollingelement.js"></script>
+<script src="/htte/js/toc.js"></script>
+<script src="/htte/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="https://cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '01106fef22715300eea62c55b6d98a2f',
+indexName: 'htte',
+inputSelector: '#search-input',
+algoliaOptions: { 'facetFilters': ["version:0.3"] },
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+
+
+<!-- fastclick -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  FastClick.attach(document.body)
+}, false)
+</script>
+
+</body>
+</html>
